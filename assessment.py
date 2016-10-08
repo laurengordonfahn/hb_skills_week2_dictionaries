@@ -153,7 +153,7 @@ def translate_to_pirate_talk(phrase):
     pirate_sentence = ""
     for word in phrase:
         pirate_sentence += " " + english_to_pirate.get(word, word)
-    
+
     return pirate_sentence
 
     # I can't get ride of the space at the start
