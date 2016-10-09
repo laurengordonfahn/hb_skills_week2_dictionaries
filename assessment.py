@@ -137,24 +137,29 @@ def translate_to_pirate_talk(phrase):
         >>> translate_to_pirate_talk("my student is not a man!")
         'me swabbie be not a man!'
     """
-    translation_list = "sir matey hotel fleabag inn student swabbie man matey professor foul blaggart restaurant galley your yer excuse arr student swabbie are be restroom head my me is be".rstrip().split(" ")
-#FOR SOME REASON BELOW WOULDN"T WORK IF LONGER THAN 1 SPACE HOW DO I DO THAT?)
-# translation_list.remove('')
 
   
-    english_to_pirate = {}
-
-
-    for ind in range(0, (len(translation_list)-1), 2):
-
-        english_to_pirate[translation_list[ind]] = translation_list[ind + 1]
-
+    english_to_pirate = {
+    "sir":        "matey",
+    "hotel":       "fleabag inn",
+    "student":     "swabbie",
+    "man":         "matey",
+    "professor":   "foul blaggart",
+    "restaurant":  "galley",
+    "your":        "yer",
+    "excuse":      "arr",
+    "student":    "swabbie",
+    "are":         "be",
+    "restroom ":   "head",
+    "my":          "me",
+    "is":          "be"    
+    }
     phrase = phrase.split(" ")
     pirate_sentence = ""
     for word in phrase:
-        pirate_sentence += " " + english_to_pirate.get(word, word)
+        pirate_sentence += english_to_pirate.get(word, word) + " "
 
-    return pirate_sentence
+    return pirate_sentence.rstrip()
 
     # I can't get ride of the space at the start
 
